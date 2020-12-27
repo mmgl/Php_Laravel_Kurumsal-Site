@@ -2,14 +2,11 @@
 
 @extends('layouts.home')
 
-@section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
+@section('title', 'MMG Yazılım Elektronik TİC. A.Ş.')
+@section('description')
+    Yazılım ve Elektroniğin Birleşim Şirketi
 @endsection
-
+@section('keywords','Bilgisayar,Yazılım işleri,Elektronik tasarım,Mekatronik')
 @section('content')
    @include('home._content')
 @endsection

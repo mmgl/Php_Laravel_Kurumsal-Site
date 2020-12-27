@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Eterna - Professional bootstrap site template for corporate business</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Your page description here" />
-    <meta name="author" content="MMG" />
+    <title>@yield('title')</title>
+    <meta name="viewport" content="@yield('viewport')" />
+    <meta name="description" content="@yield('descriptione')" />
+    <meta name="author" content="@yield('author')" />
 
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">

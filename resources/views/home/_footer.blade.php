@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="span6">
                     <div class="copyright">
-                        <p><span>&copy; Eterna company. All right reserved</span></p>
+                        <p><span>&copy; MMG company. Bizim tasarım</span></p>
                     </div>
 
                 </div>
