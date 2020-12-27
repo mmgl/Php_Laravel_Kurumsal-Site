@@ -11,5 +11,5 @@
 @endsection
 
 @section('content')
-    <p>This is my body content.</p>
+   @include('home._content')
 @endsection
