@@ -3,10 +3,12 @@
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-
+            <div class="info">
             <p class="centered"><a href="profile.html"><img src="{{asset('assets')}}/admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Marcel Newman</h5>
-
+                @auth
+                    <a href="#" class="d-block"><h5 class="centered">{{\Illuminate\Support\Facades\Auth::user()->name}}</h5></a>
+                @endauth
+            </div>
             <li class="mt">
                 <a class="active" href="index.html">
                     <i class="fa fa-dashboard"></i>
