@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="content-panel">
-                    <h4><i class="fa fa-angle-right"></i>Kategori Listesi</h4>
+                    <a class="btn btn-round btn-primary" href="{{route('admin_category_add')}}" style="margin: 15px">Add Category</a>
                     <section id="unseen">
                         <table class="table table-bordered table-striped table-condensed">
                             <thead>
@@ -32,8 +32,8 @@
                                     <td>{{ $rs->parent_id }}</td>
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->status }}</td>
-                                    <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td><a class="btn btn-round btn-info" href="{{route('admin_category_edit',['id'=>$rs->id])}}"> Edit </a></td>
+                                    <td><a class="btn btn-round btn-danger" href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
