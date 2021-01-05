@@ -30,15 +30,17 @@
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;" >
+                <a href="{{route('admin_products')}}" >
                     <i class="fa fa-cogs"></i>
-                    <span>Projeler</span>
+                    <span >Projeler</span>
                 </a>
+                <!--
                 <ul class="sub">
                     <li><a  href="calendar.html">Ağ Kontrol Yazılımı</a></li>
                     <li><a  href="gallery.html">Bölgesel İklimlendirme Otomasyonu</a></li>
                     <li><a  href="todo_list.html">Kolay Kargo Taşımacılığı KargoDrone</a></li>
                 </ul>
+                -->
             </li>
         </ul>
         <!-- sidebar menu end-->

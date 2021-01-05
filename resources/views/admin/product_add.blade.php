@@ -1,6 +1,6 @@
 
 @extends('layouts.admin')
-@section('title','Company Admin Panel')
+@section('title','Ürün Panel')
 
 @section('content')
     <section id="main-content">
@@ -8,13 +8,13 @@
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i> </h4>
-                            <form class="form-horizontal style-form" role="form" action="{{route('admin_category_create')}}" method="post">
+                            <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
+                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_create')}}" method="post">
                                 <div class="form-group" >
-                                    <label value="0" class="col-sm-2 col-sm-2 control-label">Ana Katagori</label>
+                                    <label  class="col-sm-2 col-sm-2 control-label">Ürün</label>
                                     @csrf
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="parent_id">
+                                        <select class="form-control" name="category_id">
                                             @foreach($datalist as $rs)
                                                 <option value="{{$rs -> id}}">{{$rs -> title}}</option>
                                             @endforeach
@@ -31,6 +31,12 @@
                                     <label class="col-sm-2 col-sm-2 control-label">Keywords</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="keywords" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Detail</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="detail" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -54,7 +60,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-theme02" ><i class="fa fa-check"></i> Add Category</button>
+                                <button type="submit" class="btn btn-theme02" ><i class="fa fa-check"></i> Ürün Ekle</button>
 
                             </form>
                         </div>
