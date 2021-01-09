@@ -32,7 +32,11 @@
                                     <td>{{ $rs->id }}</td>
                                     <td>{{ $rs->category_id }}</td>
                                     <td>{{ $rs->title }}</td>
-                                    <td>{{ $rs->image }}</td>
+                                    <td>
+                                        @if($rs->image)
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" height="60" width="60">
+                                        @endif
+                                    </td>
                                     <td>{{ $rs->status }}</td>
                                     <td><a class="btn btn-round btn-info" href="{{route('admin_product_edit',['id'=>$rs->id])}}"> Edit </a></td>
                                     <td><a class="btn btn-round btn-danger" href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a></td>

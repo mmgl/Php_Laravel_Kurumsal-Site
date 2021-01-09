@@ -1,7 +1,6 @@
 
 @extends('layouts.admin')
 @section('title','Ürün Panel')
-
 @section('content')
     <section id="main-content">
         <section class="wrapper site-min-height">
@@ -9,7 +8,7 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
-                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_create')}}" method="post">
+                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_store')}}" method="post" enctype="multipart/form-data">
                                 <div class="form-group" >
                                     <label  class="col-sm-2 col-sm-2 control-label">Ürün</label>
                                     @csrf
@@ -36,13 +35,19 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Detail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="detail" class="form-control">
+                                        <textarea id="summernote" name="detail"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Description</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="descriptions" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">

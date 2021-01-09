@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -50,8 +51,9 @@ class ProductController extends Controller
         $data->category_id= $request->input('category_id');
         $data->user_id= Auth::id();
         $data->detail= $request->input('detail');
-        $data->save();
+        $data->image = Storage::putFile('images',$request->file('image'));
 
+        $data->save();
         return redirect()->route('admin_products');
 
 
@@ -72,16 +74,15 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Product $product
-     * @param $id
-     * @return \Illuminate\Contracts\Foundation\Application
-     * @param \App\Models\Category
+     * @return \Illuminate\Http\Response
+     *
      */
-    public function edit(Product $product,$id)
+    public function edit($id)
     {
         $data = Product::find($id);
         $datalist = Category::all();
 
-        return view('admin.product_edit',['data'=>$data,'datalist'=>$datalist]);
+        return view('admin.product_edit',['data' => $data],['datalist' => $datalist]);
     }
 
     /**
@@ -89,22 +90,22 @@ class ProductController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Product  $product
-     * @param   $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Product $product,$id)
+    public function update(Request $request, Product $product, $id)
     {
         $data = Product::find($id);
-
-        $data->category_id= $request->input('category_id');
-        $data->user_id= Auth::id();
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
-        $data->status= $request->input('status');
-        $data->detail= $request->input('detail');
+        $data->status = $request->input('status');
+        $data->category_id = $request->input('category_id');
+        $data->user_id = Auth::id();
+        $data->detail = $request->input('detail');
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->save();
+
         return redirect()->route('admin_products');
     }
 
@@ -112,12 +113,12 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Product  $product
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product,$id)
     {
         $data = Product::find($id);
-        $data->delete();
+        $data -> delete();
         return redirect()->route('admin_products');
     }
 }

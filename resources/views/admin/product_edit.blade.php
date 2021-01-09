@@ -9,16 +9,18 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
-                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_update',['id'=>$data->$id])}}" method="post">
+                            <form role="form" action="{{route('admin_product_edit',['id' => $data -> id])}}" method="post">
+                                @csrf
                                 <div class="form-group" >
-                                    <label  class="col-sm-2 col-sm-2 control-label">Ürün</label>
-                                    @csrf
+                                    <label class="col-sm-2 col-sm-2 control-label">Ürün</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="category_id">
-                                            @foreach($datalist as $rs)
-                                                <option value="{{$rs -> id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs -> title}}</option>
-                                            @endforeach
-                                        </select>
+                                        <label class="form-control" >
+                                            <select name="category_id">
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs -> id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs -> title}}</option>
+                                                @endforeach
+                                            </select>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group" >
@@ -36,13 +38,23 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Detail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="detail" value="{{$data->detail}}" class="form-control">
+                                        <textarea id="summernote" name="detail" value="{{$data->detail}}" ></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="descriptions" value="{{$data->description}}" class="form-control">
+                                        <input type="text" name="description" value="{{$data->description}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="image" value="{{$data->image}}" class="form-control">
+
+                                        @if($data -> image)
+                                            <img src="{{\Illuminate\Support\Facades\Storage::url($data ->image)}}" height="60">
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
