@@ -13,17 +13,19 @@
                                     <label  class="col-sm-2 col-sm-2 control-label">Ürün</label>
                                     @csrf
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="category_id">
-                                            @foreach($datalist as $rs)
-                                                <option value="{{$rs -> id}}">{{$rs -> title}}</option>
-                                            @endforeach
-                                        </select>
+                                        <label>
+                                            <select class="form-control" name="category_id">
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs -> id}}">{{$rs -> title}}</option>
+                                                @endforeach
+                                            </select>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" class="form-control">
+                                        <input type="text" id="title" name="title" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">

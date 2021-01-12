@@ -9,15 +9,15 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
-                            <form role="form" action="{{route('admin_product_edit',['id' => $data -> id])}}" method="post">
+                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" enctype="multipart/form-data" method="post" >
                                 @csrf
                                 <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Ürün</label>
                                     <div class="col-sm-10">
-                                        <label class="form-control" >
-                                            <select name="category_id">
+                                        <label >
+                                            <select name="category_id" class="form-control">
                                                 @foreach($datalist as $rs)
-                                                    <option value="{{$rs -> id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs -> title}}</option>
+                                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs -> title}}</option>
                                                 @endforeach
                                             </select>
                                         </label>
@@ -26,7 +26,7 @@
                                 <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" class="form-control" value="{{$data->title}}">
+                                        <input type="text" id="title" name="title" class="form-control" value="{{$data->title}}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -74,7 +74,6 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-theme02" ><i class="fa fa-check"></i> Güncelle</button>
-
                             </form>
                         </div>
                     </div><!-- col-lg-12-->

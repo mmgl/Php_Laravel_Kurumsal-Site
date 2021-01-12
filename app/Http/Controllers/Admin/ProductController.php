@@ -74,22 +74,22 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Product $product
-     * @return \Illuminate\Http\Response
-     *
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application
      */
-    public function edit($id)
+    public function edit(Product $product,$id)
     {
         $data = Product::find($id);
         $datalist = Category::all();
-
-        return view('admin.product_edit',['data' => $data],['datalist' => $datalist]);
+        return view('admin.product_edit',['data' => $data,'datalist' => $datalist]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Product $product
+     * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Product $product, $id)

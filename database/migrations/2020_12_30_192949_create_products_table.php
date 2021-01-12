@@ -13,8 +13,8 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
             $table->string('title',150);
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
