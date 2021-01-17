@@ -9,7 +9,5 @@ class Product extends Model
 {
     use HasFactory;
 
-    public static function find($id)
-    {
-    }
+
 }

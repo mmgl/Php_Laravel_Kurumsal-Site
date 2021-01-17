@@ -1,5 +1,5 @@
-
 @extends('layouts.admin')
+
 @section('title','Ürün Panel')
 
 @section('content')
@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
-                            <form class="form-horizontal style-form" role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" enctype="multipart/form-data" method="post" >
+                            <form action="{{ route('admin_product_update', ['id' => $data->id]) }}" method="get" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Ürün</label>

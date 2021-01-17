@@ -65,7 +65,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return Response
      */
-    public function show(Product $product)
+    public function show()
     {
         //
     }
@@ -77,22 +77,21 @@ class ProductController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\Foundation\Application
      */
-    public function edit(Product $product,$id)
+    public function edit($id)
     {
         $data = Product::find($id);
         $datalist = Category::all();
-        return view('admin.product_edit',['data' => $data,'datalist' => $datalist]);
+        return view('admin.product_edit',['data'=>$data],['datalist'=>$datalist]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Product $product
-     * @param $id
+     * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Product $product, $id)
+    public function update(Request $request,Product $product, $id)
     {
         $data = Product::find($id);
         $data->title = $request->input('title');
@@ -100,7 +99,7 @@ class ProductController extends Controller
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-        $data->category_id = $request->input('category_id');
+        $data->parent_id = $request->input('parent_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
         $data->image = Storage::putFile('images',$request->file('image'));
@@ -115,7 +114,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Product $product,$id)
+    public function destroy($id)
     {
         $data = Product::find($id);
         $data -> delete();
