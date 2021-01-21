@@ -21,6 +21,7 @@
                                 <th>Category</th>
                                 <th>Title</th>
                                 <th>Image</th>
+                                <th>Galeri</th>
                                 <th>Status</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -36,6 +37,9 @@
                                         @if($rs->image)
                                             <img src="{{Storage::url($rs->image)}}" height="60" width="60">
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a  href="{{ route('admin_image_add', ['product_id' => $rs->id]) }}" onclick="return !window.open(this.href, '', 'top=120 left=120 width=640 height=720')"><img height="50" src="{{asset('assets')}}/admin/img/galeri.jpg"></a>
                                     </td>
                                     <td>{{ $rs->status }}</td>
                                     <td><a class="btn btn-round btn-info" href="{{route('admin_product_edit',['id'=> $rs->id])}}"> Edit </a></td>

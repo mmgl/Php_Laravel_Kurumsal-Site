@@ -7,10 +7,10 @@
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-                            <h4 class="mb"><i class="fa fa-angle-right"></i></h4>
-                            <form class="form-horizontal style-form" role="form" action="{{route('admin_image_store')}}" method="post" enctype="multipart/form-data">
+                            <h4 class="mb"></h4>
+                            <form class="form-horizontal style-form" role="form" action="{{route('admin_image_store',['product_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                 <div class="form-group" >
-                                    <label  class="col-sm-2 col-sm-2 control-label">{{$data -> title}}</label>
+                                    <label><h4 class="fa fa-angle-right">{{$data -> title}}</h4></label>
                                     @csrf
                                 </div>
                                 <div class="form-group">
@@ -26,11 +26,37 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-theme02" ><i class="fa fa-check"></i> Resim Ekle</button>
-
+                                <table class="table table-bordered table-striped table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach( $images as $rs )
+                                        <tr>
+                                            <td>{{ $rs->id }}</td>
+                                            <td>{{ $rs->title }}</td>
+                                            <td>
+                                                @if($rs->image)
+                                                    <img src="{{Storage::url($rs->image)}}" height="60" width="60">
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-round btn-danger" href="{{route('admin_product_delete',['id'=> $rs->id,'product_id' => $product_id->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </form>
                         </div>
                     </div><!-- col-lg-12-->
                 </div><!-- /row -->
+
         </section><!--wrapper -->
     </section><!-- /MAIN CONTENT -->
 @endsection

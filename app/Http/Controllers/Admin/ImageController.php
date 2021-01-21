@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -25,10 +27,11 @@ class ImageController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function add($product_id)
     {
-        $data = Product::find($id);
-        return view('admin.image_add',['data' => $data]);
+        $data = Product::find($product_id);
+        $images = DB::table('images')->where('product_id','=', $product_id)->get();
+        return view('admin.image_add',['data' => $data, 'images' => $images]);
     }
 
     /**
@@ -37,9 +40,17 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$product_id)
     {
-        //
+        $image = new Image();
+        $image->title = $request->input('title');
+        $image->product_id = $product_id;
+        if($request->file('image')!=null) {
+            $image->image = Storage::putFile('images', $request->file('image'));
+        }
+        $image->save();
+
+        return redirect()->route('admin_image_add', ['product_id' => $product_id]);
     }
 
     /**
@@ -71,7 +82,7 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(Image $image)
     {
         //
     }
@@ -82,8 +93,13 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function delete($id,$product_id)
     {
-        //
+        $image = Image::find($id);
+        $image->delete();
+        $max = DB::table('images')->max('id') + 1;
+        DB::statement("ALTER TABLE images AUTO_INCREMENT =  $max");
+
+        return redirect()->route('admin_image_add', ['product_id' => $product_id]);
     }
 }
