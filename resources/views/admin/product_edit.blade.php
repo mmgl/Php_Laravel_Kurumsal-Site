@@ -50,7 +50,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Image</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="image" value="{{$data->image}}" class="form-control">
+                                        <input type="file" name="image" class="form-control">
 
                                         @if($data -> image)
                                             <img src="{{\Illuminate\Support\Facades\Storage::url($data ->image)}}" height="60">
