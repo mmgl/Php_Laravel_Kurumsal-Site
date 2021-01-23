@@ -89,7 +89,7 @@ class ImageController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @param  int  $id
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */

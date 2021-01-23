@@ -37,16 +37,16 @@
                                     </thead>
                                     <tbody>
                                     @foreach( $images as $rs )
-                                        <tr>
+                                        <tr class="tr-shadow">
                                             <td>{{ $rs->id }}</td>
                                             <td>{{ $rs->title }}</td>
                                             <td>
                                                 @if($rs->image)
-                                                    <img src="{{Storage::url($rs->image)}}" height="60" width="60">
+                                                    <img src="{{Storage::url($rs->image)}}" height="60" alt="">
                                                 @endif
                                             </td>
                                             <td>
-                                                <a class="btn btn-round btn-danger" href="{{route('admin_product_delete',['id'=> $rs->id,'product_id' => $product_id->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a>
+                                                <a class="btn btn-round btn-danger" href="{{route('admin_image_delete',['id'=> $rs->id,'product_id'=>$data->id])}}" onclick="return confirm('Silmek Isteginizden eminmisiniz!!')">Delete</a>
                                             </td>
                                         </tr>
                                     @endforeach
