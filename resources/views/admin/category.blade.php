@@ -29,7 +29,9 @@
                             @foreach( $datalist as $rs )
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td>{{ $rs->parent_id }}</td>
+                                    <td>
+                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->parent_id) }}
+                                    </td>
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->status }}</td>
                                     <td><a class="btn btn-round btn-info" href="{{route('admin_category_edit',['id'=>$rs->id])}}"> Edit </a></td>

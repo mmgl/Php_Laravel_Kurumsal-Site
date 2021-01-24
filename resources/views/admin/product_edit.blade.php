@@ -12,12 +12,14 @@
                             <form action="{{ route('admin_product_update', ['id' => $data->id]) }}" method="get" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group" >
-                                    <label class="col-sm-2 col-sm-2 control-label">Ürün</label>
+                                    <label class="col-sm-2 col-sm-2 control-label">Kategori</label>
                                     <div class="col-sm-10">
                                         <label >
                                             <select name="category_id" class="form-control">
                                                 @foreach($datalist as $rs)
-                                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs -> title}}</option>
+                                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>
+                                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->parent_id) }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </label>
@@ -38,7 +40,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Detail</label>
                                     <div class="col-sm-10">
-                                        <textarea id="summernote" name="detail" value="{{$data->detail}}" ></textarea>
+                                        <textarea class="summernote" name="detail" value="{{$data->detail}}" ></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $datalist = DB::table('categories')->get();
+        $datalist = Category::with('children')->get();
         return view('admin.category',['datalist' => $datalist]);
     }
 
@@ -39,7 +39,7 @@ class CategoryController extends Controller
      */
     public function add()
     {
-        $datalist = DB::table('categories')->get()->where('parent_id',0);
+        $datalist = Category::with('children')->get();
 
         return view('admin.category_add',['datalist' => $datalist]);
     }
@@ -96,7 +96,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $data = Category::find($id);
-        $datalist = DB::table('categories')->get()->where('parent_id',0);
+        $datalist = Category::with('children')->get();
 
         return view('admin.category_edit',['data' => $data],['datalist' => $datalist]);
     }

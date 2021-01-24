@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="span6">
-                    <p class="topcontact"><i class="icon-phone"></i> +62 088 999 123</p>
+                    <p class="topcontact"><i class="icon-phone"></i> 0212 865 2012</p>
                 </div>
                 <div class="span6">
 
