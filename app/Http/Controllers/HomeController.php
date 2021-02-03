@@ -35,6 +35,10 @@ class HomeController extends Controller
         $setting = Setting::first();
         return view('home.references', ['setting'=>$setting]);
     }
+    public function faq(){
+        $setting = Setting::first();
+        return view('home.faq', ['setting'=>$setting]);
+    }
 
     public function login(){
         return view('admin.login');
