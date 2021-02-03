@@ -3,7 +3,7 @@
         <div class="row">
             <div class="span4">
                 <div class="widget">
-                    <h5 class="widgetheading">Browse pages</h5>
+                    <h5 class="widgetheading">Hızlı Ulaşım</h5>
                     <ul class="link-list">
                         <li><a href="#">Our company</a></li>
                         <li><a href="#">Terms and conditions</a></li>
@@ -17,28 +17,31 @@
             </div>
             <div class="span4">
                 <div class="widget">
-                    <h5 class="widgetheading">Get in touch</h5>
+                    <h5 class="widgetheading">Bize Ulaşın</h5>
                     <address>
-                        <strong>MMG company Inc.</strong><br>
-                        Somestreet 200 VW, Suite Village A.001<br>
-                        Jakarta 13426 Indonesia
+                        <strong>MMG Yazılım</strong><br>
+                        {{$setting->adress}}
                     </address>
                     <p>
-                        <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                        <i class="icon-envelope-alt"></i> email@domainname.com
+                        <i class="icon-phone"></i> {{$setting->fax}} <br>
+                        <i class="icon-envelope-alt"></i> {{$setting->email}}
                     </p>
                 </div>
             </div>
             <div class="span4">
                 <div class="widget">
-                    <h5 class="widgetheading">Subscribe newsletter</h5>
+                    <h5 class="widgetheading">Sosyal Medya</h5>
                     <p>
-                        Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.
+                        Bizi Takip Edin...
                     </p>
                     <form class="subscribe">
-                        <div class="input-append">
-                            <input class="span2" id="appendedInputButton" type="text">
-                            <button class="btn btn-theme" type="submit">Subscribe</button>
+                        <div>
+                                <a href="{{$setting->facebook}}" data-placement="bottom" title="" data-original-title="Facebook"><i class="icon-facebook icon-white"></i></a>
+                                <a href="{{$setting->twitter}}" data-placement="bottom" title="" data-original-title="Twitter"><i class="icon-twitter icon-white"></i></a>
+                                <a href="{{$setting->instagram}}" data-placement="bottom" title="" data-original-title="Instagram"><i class="icon-linkedin icon-white"></i></a>
+                                <a href="#" data-placement="bottom" title="" data-original-title="Pinterest"><i class="icon-pinterest  icon-white"></i></a>
+                                <a href="#" data-placement="bottom" title="" data-original-title="Google +"><i class="icon-google-plus icon-white"></i></a>
+                                <a href="#" data-placement="bottom" title="" data-original-title="Dribbble"><i class="icon-dribbble icon-white"></i></a>
                         </div>
                     </form>
                 </div>

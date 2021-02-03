@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
-Route::get('', function () {
+Route::get('/', function () {
     return view('home.index');
 });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/references', [App\Http\Controllers\HomeController::class, 'references'])->name('references');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
 
 //Route
 Route::get('/test/{id}/{name}', [App\Http\Controllers\Admin\HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
@@ -30,7 +37,7 @@ Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index']
 //login
 Route::get('/admin/login', [\App\Http\Controllers\HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [\App\Http\Controllers\HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout', [\App\Http\Controllers\HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout', [\App\Http\Controllers\HomeController::class, 'logout'])->name('logout'); //adminleri sileceğiz heryerde logout yapabilmek için.
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -70,4 +77,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('setting', [SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [SettingController::class, 'update'])->name('admin_setting_update');
 
+});
+
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('myprofile');
 });

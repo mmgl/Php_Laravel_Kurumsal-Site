@@ -39,9 +39,7 @@
 <body>
 
 @include('home._header')
-<section id="featured">
-    @include('home._slider')
-</section>
+
 <!-- /section featured -->
 @section('content')
     @include('home._content')

@@ -1,12 +1,14 @@
-<!-- resources/views/child.blade.php -->
+@php
+  $setting = \App\Http\Controllers\HomeController::getSetting();
+@endphp
 
 @extends('layouts.home')
 
-@section('title', 'MMG Yazılım Elektronik TİC. A.Ş.')
-@section('description')
-    Yazılım ve Elektroniğin Birleşim Şirketi
-@endsection
-@section('keywords','Bilgisayar,Yazılım işleri,Elektronik tasarım,Mekatronik')
+@section('title', $setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
+
 @section('content')
-   @include('home._content')
+    @include('home._slider')
+    @include('home._content')
 @endsection

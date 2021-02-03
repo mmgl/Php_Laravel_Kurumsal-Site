@@ -1,5 +1,3 @@
-
-
     <!-- start slider -->
     <div id="da-slider" class="da-slider">
         <div class="da-slide">
