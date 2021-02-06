@@ -31,7 +31,7 @@
 
             <li class="sub-menu">
                 <a href="{{route('admin_products')}}" >
-                    <i class="fa fa-cogs"></i>
+                    <i class="fa fa-tasks"></i>
                     <span >Projeler</span>
                 </a>
                 <!--
@@ -43,15 +43,15 @@
                 -->
             </li>
             <li class="sub-menu">
-                <a href="{{route('admin_setting')}}" >
-                    <i class="fa fa-cogs"></i>
-                    <span >Ayarlar</span>
+                <a href="{{route('admin_message')}}" >
+                    <i class="fa fa-book"></i>
+                    <span >Mesajlar</span>
                 </a>
             </li>
             <li class="sub-menu">
-                <a href="{{route('admin_message')}}" >
+                <a href="{{route('admin_setting')}}" >
                     <i class="fa fa-cogs"></i>
-                    <span >Mesajlarr</span>
+                    <span >Ayarlar</span>
                 </a>
             </li>
         </ul>

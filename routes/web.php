@@ -20,7 +20,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::get('/', function () {
-    return view('home.index');
+    return redirect()->route('home');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -28,6 +28,10 @@ Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus'])-
 Route::get('/references', [App\Http\Controllers\HomeController::class, 'references'])->name('references');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
+
+Route::get('/product/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
+Route::get('/categoryproducts/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'categoryproducts'])->name('categoryproducts');
+Route::get('/menu/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
 
 Route::post('/sendmessage', [App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
 
@@ -85,7 +89,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/', [MesssageController::class, 'index'])->name('admin_message');
         Route::get('edit/{id}', [MesssageController::class, 'edit'])->name('admin_message_edit');
         Route::post('update/{id}', [MesssageController::class, 'update'])->name('admin_message_update');
-        Route::get('delete/{id}', [MesssageController::class, 'delete'])->name('admin_message_delete');
+        Route::get('delete/{id}', [MesssageController::class, 'destroy'])->name('admin_message_delete');
         Route::get('show', [MesssageController::class, 'show'])->name('admin_message_show');
     });
 

@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i>Mesajlarr</h4>
-                            <form action="{{ route('admin_message_update', ['id' => $data->id]) }}" method="get" enctype="multipart/form-data">
+                            <form action="{{ route('admin_message_update', ['id' => $data->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Name</label>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Admin Note</label>
-                                    <textarea name="note" id="note">{{ $data->note }}</textarea>
+                                    <textarea class="summernote" name="note" id="note" >{{ $data->note }}</textarea>
                                 </div>
                                 <div style="margin-bottom: 15px;" id="success">@include('home.message')</div>
 

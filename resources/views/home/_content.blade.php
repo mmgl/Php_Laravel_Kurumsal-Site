@@ -7,12 +7,12 @@
                     <div class="row">
                         <div class="span8">
                             <div class="cta-text">
-                                <h2>Special price in very <span>limited</span> times</h2>
+                                <h2><span>Bilgi Teknolojileri</span> ile ilgili olarak her türlü sorunuz için bize ulaşabilirsiniz.</h2>
                             </div>
                         </div>
                         <div class="span4">
                             <div class="cta-btn">
-                                <a href="#" class="btn btn-theme">Get a quote <i class="icon-angle-right"></i></a>
+                                <a href="{{route('contact')}}" class="btn btn-theme">Bize Ulaşın<i class="icon-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -31,11 +31,11 @@
                                 <i class="ico icon-circled icon-bgdark icon-star icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>High <strong>Quality</strong></h4>
+                                <h4>Yüksek <strong>Kalite</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Yarım asırlık tecrübe.
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                                 <i class="ico icon-circled icon-bglight icon-dropbox icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>Rich of <strong>Features</strong></h4>
+                                <h4>Güçlü bir <strong>Gelecek</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Paydaşlarına rekabette öne geçme fırsatı oluşturma.
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -60,11 +60,11 @@
                                 <i class="ico icon-circled icon-bgdark icon-laptop active icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>Modern <strong>Design</strong></h4>
+                                <h4>Modern <strong>Tasarım</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Özgün tasarımın öncüsü
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -78,11 +78,11 @@
                                 <i class="ico icon-circled icon-bgprimary icon-code icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>Valid <strong>Code</strong></h4>
+                                <h4>Güvenli <strong>Etkileşim</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Uçtan uca güvenilir ve asgari ekonomik çözümler.
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -93,11 +93,11 @@
                                 <i class="ico icon-circled icon-bgdanger icon-cut icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>Special <strong>Price</strong></h4>
+                                <h4>Uygun <strong>Fiyat</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Hızlı iletişim ve pratik çözüm sağlama yeteneği.
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -107,11 +107,11 @@
                                 <i class="ico icon-circled icon-bgsuccess icon-user icon-3x"></i>
                             </div>
                             <div class="text">
-                                <h4>Free <strong>Support</strong></h4>
+                                <h4>Destek <strong>Danışmanlık</strong></h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                                    Ülke menfaatlerini kişisel menfaatlerin önünde gören milli oluşum.
                                 </p>
-                                <a href="#">Learn More</a>
+                                <a href="#">Devamı</a>
                             </div>
                         </div>
                     </div>
@@ -130,52 +130,52 @@
 
         <div class="row">
             <div class="span12 aligncenter">
-                <h3 class="title">What people <strong>saying</strong> about us</h3>
+                <h3 class="title">Neden <strong>Biz</strong> ?</h3>
                 <div class="blankline30"></div>
 
                 <ul class="bxslider">
                     <li>
                         <blockquote>
-                            Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                            feugiat
+                            Yarım asırlık tecrübe. Paydaşlarına rekabette öne geçme fırsatı oluşturma. Uçtan uca güvenilir ve asgari ekonomik çözümler. Hızlı iletişim ve pratik çözüm sağlama yeteneği.
+                            Ülke menfaatlerini kişisel menfaatlerin önünde gören milli oluşum.
                         </blockquote>
                         <div class="testimonial-autor">
                             <img src="{{asset('assets')}}/img/dummies/testimonial/1.png" alt="" />
-                            <h4>Hillary Doe</h4>
-                            <a href="#">www.companyname.com</a>
+                            <h4>Hilmi Bektaş</h4>
+                            <a href="#">www.mmg.com</a>
                         </div>
                     </li>
                     <li>
                         <blockquote>
-                            Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                            feugiat
+                            Yarım asırlık tecrübe. Paydaşlarına rekabette öne geçme fırsatı oluşturma. Uçtan uca güvenilir ve asgari ekonomik çözümler. Hızlı iletişim ve pratik çözüm sağlama yeteneği.
+                            Ülke menfaatlerini kişisel menfaatlerin önünde gören milli oluşum.
                         </blockquote>
                         <div class="testimonial-autor">
                             <img src="{{asset('assets')}}/img/dummies/testimonial/2.png" alt="" />
-                            <h4>Michael Doe</h4>
-                            <a href="#">www.companyname.com</a>
+                            <h4>Mikail Taş</h4>
+                            <a href="#">www.mmg.com</a>
                         </div>
                     </li>
                     <li>
                         <blockquote>
-                            Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                            feugiat
+                            Yarım asırlık tecrübe. Paydaşlarına rekabette öne geçme fırsatı oluşturma. Uçtan uca güvenilir ve asgari ekonomik çözümler. Hızlı iletişim ve pratik çözüm sağlama yeteneği.
+                            Ülke menfaatlerini kişisel menfaatlerin önünde gören milli oluşum.
                         </blockquote>
                         <div class="testimonial-autor">
                             <img src="{{asset('assets')}}/img/dummies/testimonial/3.png" alt="" />
-                            <h4>Mark Donovan</h4>
-                            <a href="#">www.companyname.com</a>
+                            <h4>Mahmut Aslan</h4>
+                            <a href="#">www.mmg.com</a>
                         </div>
                     </li>
                     <li>
                         <blockquote>
-                            Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis feugiat.Suspendisse eu erat quam. Vivamus porttitor eros quis nisi lacinia sed interdum lorem vulputate. Aliquam a orci quis nisi sagittis sagittis. Etiam adipiscing, justo quis
-                            feugiat
+                            Yarım asırlık tecrübe. Paydaşlarına rekabette öne geçme fırsatı oluşturma. Uçtan uca güvenilir ve asgari ekonomik çözümler. Hızlı iletişim ve pratik çözüm sağlama yeteneği.
+                            Ülke menfaatlerini kişisel menfaatlerin önünde gören milli oluşum.
                         </blockquote>
                         <div class="testimonial-autor">
                             <img src="{{asset('assets')}}/img/dummies/testimonial/4.png" alt="" />
-                            <h4>Marry Doe Elliot</h4>
-                            <a href="#">www.companyname.com</a>
+                            <h4>Meryem Çelik</h4>
+                            <a href="#">www.mmg.com</a>
                         </div>
                     </li>
                 </ul>

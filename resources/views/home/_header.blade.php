@@ -18,7 +18,7 @@
         <div class="row nomargin">
             <div class="span4">
                 <div class="logo">
-                    <a href="{{route('home')}}"><img src="{{asset('assets')}}/img/logo.png" alt="" /></a>
+                    <a  href="{{route('home')}}"><img style="width: 160px" src="{{asset('assets')}}/img/logo.png" alt="" /></a>
                 </div>
             </div>
             <div class="span8">
@@ -29,21 +29,7 @@
                                 <li class="dropdown">
                                     <a href="{{route('home')}}"><i class="icon-home"></i> Home <i></i></a>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">Features <i class="icon-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="typography.html">Typography</a></li>
-                                        <li><a href="components.html">Components</a></li>
-                                        <li><a href="icons.html">Icons</a></li>
-                                        <li><a href="icon-variations.html">Icon variations</a></li>
-                                        <li class="dropdown"><a href="#">3rd menus<i class="icon-angle-right"></i></a>
-                                            <ul class="dropdown-menu sub-menu-level1">
-                                                <li><a href="index.html">Sub menu</a></li>
-                                                <li><a href="index.html">Sub menu</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
+                                    @include('home._category')
                                 <li>
                                     <a href="{{route('aboutus')}}">Hakkımızda</a>
                                 </li>

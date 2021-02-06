@@ -81,7 +81,7 @@ class MesssageController extends Controller
         $data->note = $request->input('note');
         $data->save();
 
-        return back()->with('success', 'This message updated.');
+        return back()->with('success', 'Mesaj Başarıyla Güncellenmiştir.');
     }
 
     /**
@@ -90,13 +90,11 @@ class MesssageController extends Controller
      * @param  \App\Models\Messsage  $message
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function destroy(Messsage $message,$id)
     {
         $data = Messsage::find($id);
         $data->delete();
-        $max = DB::table('messages')->max('id') + 1;
-        DB::statement("ALTER TABLE messages AUTO_INCREMENT =  $max");
 
-        return redirect()->route('admin_message');
+        return redirect()->route('admin_message')->with('succes','Meseaj Silindi.');
     }
 }

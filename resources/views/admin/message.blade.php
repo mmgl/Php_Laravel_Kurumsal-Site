@@ -8,6 +8,7 @@
             <h3><i class="fa fa-angle-right"></i> Mesajlar </h3>
             <div class="row mt">
                 <div class="col-lg-12">
+                    @include('home.message')
                 </div>
             </div>
             <div class="col-lg-12">
@@ -27,7 +28,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach( $datalist->sortBy('id') as $rs )
+                            @foreach( $datalist as $rs )
                                 <tr>
                                     <td>{{ $rs->id }}</td>
                                     <td>{{ $rs->name }}</td>
@@ -37,7 +38,7 @@
                                     <td>{{ $rs->message }}</td>
                                     <td>{!! $rs->note !!}</td>
                                     <td>{{ $rs->status }}</td>
-                                    <td><a class="btn btn-round btn-info" href="{{route('admin_message_edit',['id'=> $rs->id])}}"> Edit </a></td>
+                                    <td><a class="btn btn-round btn-info" href="{{route('admin_message_edit',['id'=> $rs->id])}}" onclick="return !window.open(this.href, '', 'top=120 left=120 width=640 height=720')"> Edit </a></td>
                                     <td><a class="btn btn-round btn-danger" href="{{route('admin_message_delete',['id'=> $rs->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a></td>
                                 </tr>
                             @endforeach

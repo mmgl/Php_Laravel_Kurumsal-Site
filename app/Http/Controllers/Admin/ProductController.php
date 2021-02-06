@@ -94,12 +94,12 @@ class ProductController extends Controller
     public function update(Request $request,Product $product, $id)
     {
         $data = Product::find($id);
+        $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-        $data->parent_id = $request->input('parent_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
         if($request->file('image')!=null)

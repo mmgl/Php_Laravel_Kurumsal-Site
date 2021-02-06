@@ -9,7 +9,7 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                             <h4 class="mb"><i class="fa fa-angle-right"></i> Ürünler</h4>
-                            <form action="{{ route('admin_product_update', ['id' => $data->id]) }}" method="get" enctype="multipart/form-data">
+                            <form action="{{ route('admin_product_update', ['id' => $data->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Kategori</label>
@@ -18,7 +18,7 @@
                                             <select name="category_id" class="form-control">
                                                 @foreach($datalist as $rs)
                                                     <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>
-                                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->parent_id) }}
+                                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}
                                                     </option>
                                                 @endforeach
                                             </select>

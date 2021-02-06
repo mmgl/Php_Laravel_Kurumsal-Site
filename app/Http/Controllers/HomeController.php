@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Messsage;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +22,32 @@ class HomeController extends Controller
 
     public function index(){
         $setting = Setting::first();
-        return view('home.index',['setting'=>$setting]);
+        $slider = Product::select('id','title','description','image','slug')->limit(3)->get();
+
+        $data = [
+            'setting'=>$setting,
+            'slider'=>$slider,
+        ];
+        return view('home.index', $data);
+    }
+
+    public function product($id, $slug){
+        $data = Product::find($id);
+        $setting = Setting::first();
+        return view('home.contact', ['data' => $data,'setting'=>$setting]);
+    }
+    public function categoryproducts($id, $slug){
+        $data = Product::where('category_id',$id)->get();
+        print_r($data);
+        exit();
+    }
+
+
+    public function menu($id, $slug){
+        $menu = Product::where('product_id', $id)->where('status','=','True')->get();
+        $data = Category::where('status','=','True')->find($id);
+
+        return view('home.menu_content', ['menu'=>$menu, 'data' => $data]);
     }
 
     public function aboutus(){
