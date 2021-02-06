@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MesssageController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,8 @@ Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus'])-
 Route::get('/references', [App\Http\Controllers\HomeController::class, 'references'])->name('references');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
+
+Route::post('/sendmessage', [App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
 
 //Route
 Route::get('/test/{id}/{name}', [App\Http\Controllers\Admin\HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
@@ -76,6 +79,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     //Setting
     Route::get('setting', [SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [SettingController::class, 'update'])->name('admin_setting_update');
+
+    //Message
+    Route::prefix('messages')->group(function (){
+        Route::get('/', [MesssageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [MesssageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update/{id}', [MesssageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [MesssageController::class, 'delete'])->name('admin_message_delete');
+        Route::get('show', [MesssageController::class, 'show'])->name('admin_message_show');
+    });
 
 });
 

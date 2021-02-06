@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Messsage;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +39,19 @@ class HomeController extends Controller
     public function faq(){
         $setting = Setting::first();
         return view('home.faq', ['setting'=>$setting]);
+    }
+
+    public function sendmessage(Request $request){
+
+        $message = new Messsage();
+        $message->name = $request->input('name');
+        $message->email = $request->input('email');
+        $message->phone = $request->input('phone');
+        $message->subject = $request->input('subject');
+        $message->message = $request->input('message');
+        $message->save();
+
+        return redirect()->route('contact')->with('success', 'Mesajınız başarıyla gönderilmiştir.Teşekkürler');
     }
 
     public function login(){

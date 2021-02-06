@@ -48,6 +48,12 @@
                     <span >Ayarlar</span>
                 </a>
             </li>
+            <li class="sub-menu">
+                <a href="{{route('admin_message')}}" >
+                    <i class="fa fa-cogs"></i>
+                    <span >Mesajlarr</span>
+                </a>
+            </li>
         </ul>
         <!-- sidebar menu end-->
     </div>

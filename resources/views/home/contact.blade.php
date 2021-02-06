@@ -25,10 +25,10 @@
                 <div class="span8">
                     <h4>Formu doldurarak bizimle iletişime geçebilirsiniz</h4>
 
-                    <div id="sendmessage">Mesaj gönderildi.Teşekkürler!</div>
-                    <div id="errormessage"></div>
+                    @include('home.message')
 
-                    <form action="" method="post" role="form" class="contactForm">
+                    <form action="{{route('sendmessage')}}" method="post" role="form" class="contactForm">
+                        @csrf
                         <div class="row">
                             <div class="span4 form-group field">
                                 <input type="text" name="name" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -39,8 +39,12 @@
                                 <input type="email" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                                 <div class="validation"></div>
                             </div>
-                            <div class="span8 form-group">
+                            <div class="span4 form-group">
                                 <input type="text" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="span4 form-group">
+                                <input type="text" name="phone" id="phone" placeholder="Phone" data-rule="text" data-msg="Please enter Your Phone" />
                                 <div class="validation"></div>
                             </div>
                             <div class="span8 form-group">

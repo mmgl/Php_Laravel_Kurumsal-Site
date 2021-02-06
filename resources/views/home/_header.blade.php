@@ -47,12 +47,6 @@
                                 <li>
                                     <a href="{{route('aboutus')}}">Hakkımızda</a>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">Portfolio <i class="icon-angle-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                                    </ul>
-                                </li>
                                 <li>
                                     <a href="{{ route('references')}}">Referanslarımız</a>
                                 </li>
@@ -71,7 +65,8 @@
                                 </li>
                                 @endauth
                                 @guest
-                                    <li class="dropdown active"><a href="">Login / Join<i class="icon-angle-down"></i></a>
+                                    <li class="dropdown active">
+                                        <a href="">Login / Join<i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ route('login') }}">Login</a></li>
                                             <li><a href="{{ route('register') }}">Register</a></li>
