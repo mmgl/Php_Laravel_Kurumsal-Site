@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{ $rs->id }}</td>
                                     <td>
-                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->parent_id) }}
+                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }} <!-- title olabilir.-->
                                     </td>
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->status }}</td>

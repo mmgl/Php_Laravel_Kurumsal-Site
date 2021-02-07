@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Messsage;
 use App\Models\Product;
 use App\Models\Setting;
@@ -33,21 +34,23 @@ class HomeController extends Controller
 
     public function product($id, $slug){
         $data = Product::find($id);
+        $imagelist = Image::where('product_id',$id)->get();
         $setting = Setting::first();
-        return view('home.contact', ['data' => $data,'setting'=>$setting]);
+        return view('home.product_detail', ['data' => $data,'setting'=>$setting,'imagelist' => $imagelist]);
     }
-    public function categoryproducts($id, $slug){
-        $data = Product::where('category_id',$id)->get();
-        print_r($data);
-        exit();
+
+    public function getproduct(Request $request){
+            $data = Product::where('title', $request->input('search'))->first();
+            return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
     }
 
 
     public function menu($id, $slug){
-        $menu = Product::where('product_id', $id)->where('status','=','True')->get();
-        $data = Category::where('status','=','True')->find($id);
+        $data = Product::where('category_id', $id)->where('status','=','True')->get();
+        $menu = Category::where('status','=','True')->find($id);
+        $setting = Setting::first();
 
-        return view('home.menu_content', ['menu'=>$menu, 'data' => $data]);
+        return view('home.category_detail', ['data' => $data,'menu'=>$menu,'setting'=>$setting]);
     }
 
     public function aboutus(){

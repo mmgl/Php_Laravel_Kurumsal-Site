@@ -8,7 +8,13 @@
             <div class="row">
                 <div class="span12">
                     <div class="navigation">
-
+                        <div class="input-append">
+                            <form action="{{ route('getproduct') }}" method="post">
+                                @csrf
+                                @livewire('search')
+                            </form>
+                            @livewireScripts
+                        </div>
                     </div>
                 </div>
             </div>

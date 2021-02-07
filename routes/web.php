@@ -30,8 +30,9 @@ Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])-
 Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
 
 Route::get('/product/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
-Route::get('/categoryproducts/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'categoryproducts'])->name('categoryproducts');
 Route::get('/menu/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
+
+Route::post('/getproduct', [App\Http\Controllers\HomeController::class, 'getproduct'])->name('getproduct');
 
 Route::post('/sendmessage', [App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
 
