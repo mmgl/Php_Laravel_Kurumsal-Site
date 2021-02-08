@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\MesssageController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -81,6 +82,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('show',[\App\Http\Controllers\Admin\ImageController::class,'show'])->name('admin_image_show');
     });
 
+    //Review
+    Route::prefix('review')->group(function (){
+        Route::get('/',[ReviewController::class,'index'])->name('admin_review');
+        Route::post('update/{id}',[ReviewController::class,'update'])->name('admin_review_update');
+        Route::get('delete/{id}',[ReviewController::class,'destroy'])->name('admin_review_delete');
+        Route::get('show/{id}',[ReviewController::class,'show'])->name('admin_review_show');
+    });
+
     //Setting
     Route::get('setting', [SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [SettingController::class, 'update'])->name('admin_setting_update');
@@ -98,6 +107,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
+    Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/destroymyreviews/{id}', [UserController::class, 'destroymyreviews'])->name('admin_review_delete');
+
 });
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {

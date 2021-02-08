@@ -6,6 +6,7 @@ use App\Models\Review;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -23,7 +24,8 @@ class UserController extends Controller
     public function myreviews()
     {
         $datalist = Review::where('user_id','=',Auth::user()->id)->get();
-        return view('home.user_reviews',['datalist'=>$datalist]);
+        $setting = Setting::first();
+        return view('home.user_reviews',['datalist'=>$datalist,'setting'=>$setting]);
     }
 
     public function destroyreview(Review $review,$id)

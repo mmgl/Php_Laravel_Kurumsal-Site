@@ -10,7 +10,7 @@
                 @endauth
             </div>
             <li class="mt">
-                <a class="active" href="{{route('admin_home')}}">
+                <a class="" href="{{route('admin_home')}}">
                     <i class="fa fa-dashboard"></i>
                     <span>AnaSayfa</span>
                 </a>
@@ -32,7 +32,20 @@
             <li class="sub-menu">
                 <a href="{{route('admin_products')}}" >
                     <i class="fa fa-tasks"></i>
-                    <span >Projeler</span>
+                    <span >Çözümler</span>
+                </a>
+                <!--
+                <ul class="sub">
+                    <li><a  href="calendar.html">Ağ Kontrol Yazılımı</a></li>
+                    <li><a  href="gallery.html">Bölgesel İklimlendirme Otomasyonu</a></li>
+                    <li><a  href="todo_list.html">Kolay Kargo Taşımacılığı KargoDrone</a></li>
+                </ul>
+                -->
+            </li>
+            <li class="sub-menu">
+                <a href="{{route('admin_review')}}" >
+                    <i class="fa fa-tasks"></i>
+                    <span >Yorumlar</span>
                 </a>
                 <!--
                 <ul class="sub">
