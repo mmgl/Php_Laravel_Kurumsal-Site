@@ -104,5 +104,9 @@
     });
 </script>
 
+<script>
+    @livewireScripts
+</script>
+
 <!-- Template Custom JavaScript File -->
 <script src="{{asset('assets')}}/js/custom.js"></script>

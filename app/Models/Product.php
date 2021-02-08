@@ -9,14 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $appends = [
-        'parent',
-    ];
-
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function reivew()
+    {
+        return $this->hasMany(Review::class);
     }
 
 

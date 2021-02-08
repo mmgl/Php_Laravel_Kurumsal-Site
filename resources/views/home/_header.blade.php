@@ -13,7 +13,9 @@
                                 @csrf
                                 @livewire('search')
                             </form>
-                            @livewireScripts
+                            @section('footerjs')
+                                @livewireScripts
+                            @endsection
                         </div>
                     </div>
                 </div>

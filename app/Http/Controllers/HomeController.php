@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Image;
 use App\Models\Messsage;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public static function categorylist()
     {
-        return Category::where('parent_id','=',0)->with('children')->get(); //parent_id =0 olanları cocuklarıyla getir
+        return Category::where('parent_id','=',0)->with('children')->where('status','=','True')->get(); //parent_id =0 olanları cocuklarıyla getir
     }
 
     public static function getSetting(){
@@ -34,9 +34,9 @@ class HomeController extends Controller
 
     public function product($id, $slug){
         $data = Product::find($id);
-        $imagelist = Image::where('product_id',$id)->get();
+        $reviews = Review::where('product_id',$id)->get();
         $setting = Setting::first();
-        return view('home.product_detail', ['data' => $data,'setting'=>$setting,'imagelist' => $imagelist]);
+        return view('home.product_detail', ['data' => $data,'setting'=>$setting,'reviews'=>$reviews]);
     }
 
     public function getproduct(Request $request){
