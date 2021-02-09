@@ -20,8 +20,8 @@ class Review extends Component
         return view('livewire.review');
     }
     private function resetInput(){
-        $this->comment = null;
         $this->subject = null;
+        $this->comment = null;
         $this->product_id = null;
         $this->IP = null;
     }
@@ -29,16 +29,16 @@ class Review extends Component
     public function store()
     {
         $this->validate([
-            'commet' => 'required|min:10',
-            'subject'=> 'required|min:5'
+            'subject'=> 'required|min:5',
+            'comment' => 'required|min:10'
         ]);
 
         \App\Models\Review::create([
             'product_id'=>$this->product_id,
             'user_id'=>Auth::id(),
             'IP'=>$_SERVER['REMOTE_ADDR'],
-            'comment'=>$this->comment,
             'subject'=>$this->subject,
+            'comment'=>$this->comment,
 
         ]);
         session()->flash('message','Gönderim başarılı');

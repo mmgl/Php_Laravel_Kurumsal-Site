@@ -2,15 +2,6 @@
 
 @section('title', 'Yorum Sayfası')
 @section('content')
-    <section id="inner-headline">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="content">
         <div class="container">
             <div class="row">
@@ -20,7 +11,7 @@
                     </aside>
                 </div>
                 <div class="span8">
-                    <div class="span6">
+
                         <h4 class="title"><strong>Ürünler</strong> - hakkında yorumlarınız<span></span></h4>
 
                         <table class="table table-striped">
@@ -53,7 +44,6 @@
                             </tbody>
                         </table>
                         @endforeach
-                    </div>
                 </div>
             </div>
         </div>

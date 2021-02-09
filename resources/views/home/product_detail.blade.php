@@ -47,8 +47,8 @@
                 </div>
             </div>
             @endforeach
-            @livewire('review', ['id' => $data->id])
         </div>
+        @livewire('review', ['id' => $data->id])
     </div>
     </div>
         </div>

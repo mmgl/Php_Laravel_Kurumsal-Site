@@ -19,6 +19,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Product</th>
+                                <th>User</th>
                                 <th>Subject</th>
                                 <th>Review</th>
                                 <th>Status</th>
@@ -32,11 +33,10 @@
                                 <tr>
                                     <td>{{$rs->id}}</td>
                                     <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}" target="_blank">{{$rs->product->title}}</a> </td>
+                                    <td>{{$rs->user->name}}</td>
                                     <td>{{$rs->subject}}</td>
                                     <td>{{$rs->comment}}</td>
-                                    <td>
-                                        <span class="status--process">{{ $rs->status }}</span>
-                                    </td>
+                                    <td>{{ $rs->status }}</td>
                                     <td>{{$rs->created_at}}</td>
                                     <td><a class="btn btn-round btn-info" href="{{ route('admin_review_show', ['id' => $rs->user->id]) }}" onclick="return !window.open(this.href, '', 'top=120 left=120 width=640 height=720')">Edit
                                         </a>

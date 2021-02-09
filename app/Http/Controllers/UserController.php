@@ -28,7 +28,7 @@ class UserController extends Controller
         return view('home.user_reviews',['datalist'=>$datalist,'setting'=>$setting]);
     }
 
-    public function destroyreview(Review $review,$id)
+    public function destroymyreviews(Review $review,$id)
     {
         $data = Review::find($id);
         $data->delete();

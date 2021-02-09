@@ -20,7 +20,6 @@ class Review extends Model
         'IP',
         'subject',
         'comment',
-        'status'
     ];
 
     public function product(){
