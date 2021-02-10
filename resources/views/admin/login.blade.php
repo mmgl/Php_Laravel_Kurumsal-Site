@@ -28,9 +28,9 @@ MAIN CONTENT
 
 <div id="login-page">
     <div class="container">
-
         <form class="form-login" action="{{route('admin_logincheck')}}" method="post">
             @csrf
+            <div class="message">@include('home.message')</div>
             <h2 class="form-login-heading">Kullanıcı Girişi</h2>
             <div class="login-wrap">
                 <input id="email" type="email" class="form-control" placeholder="Email"  name="email" autofocus>
