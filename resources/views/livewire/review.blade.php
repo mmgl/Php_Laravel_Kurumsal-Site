@@ -1,4 +1,9 @@
 <div class="marginbot30"></div>
+@if(session()->has("message"))
+    <div class="alert alert-success">
+        {{ session("message") }}
+    </div>
+@endif
 <h4>Leave your comment</h4>
 @include('home.message')
 <form wire:submit.prevent="store">
@@ -7,9 +12,11 @@
         <div class="span8 margintop10">
             <div class="span8 margintop10">
                 <input class="input" wire:model="subject" type="text" placeholder="Enter your subject" />
+                @error('subject')<span class="text-danger">{{$message}}</span>@enderror
             </div>
             <p>
                 <textarea rows="12" class="input-block-level" wire:model="comment" placeholder="Your comment here"></textarea>
+                @error('comment')<span class="text-danger">{{$message}}</span>@enderror
             </p>
             <p>
                 @auth
