@@ -40,15 +40,14 @@
                                     <td>{{ $rs->email }}</td>
                                     <td>{{ $rs->phone }}</td>
                                     <td>{{ $rs->address }}</td>
-                                    <td>@foreach($rs->roles as $row)
+                                    <td>
+                                        @foreach($rs->roles as $row)
                                             {{ $row->name }}
                                         @endforeach
-                                        <a href="{{ route('admin_user_roles', ['id' => $rs->id]) }}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=800 height=600')">
-                                            <i class="nav-icon fas fa-plus-circle"></i>
-                                        </a>
+                                        <a href="{{ route('admin_user_roles', ['id' => $rs->id]) }}" onclick="return !window.open(this.href, '', 'top=120 left=120 width=640 height=720')"><i style="color: #0e90d2" class="nav-icon fas fa-plus"></i></a>
                                     </td>
-                                    <td><a class="btn btn-round btn-info" href="{{route('admin_user_edit',['id'=> $rs->id])}}"> Edit </a></td>
-                                    <td><a class="btn btn-round btn-danger" href="{{route('admin_user_delete',['id'=> $rs->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a></td>
+                                    <td><a class="btn btn-round btn-info" href="{{route('admin_user_edit',['id'=> $rs->id])}}"> Edit </a>
+                                    <a class="btn btn-round btn-danger" href="{{route('admin_user_delete',['id'=> $rs->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

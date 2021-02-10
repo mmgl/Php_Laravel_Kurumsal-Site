@@ -32,7 +32,7 @@
                                                 <tr>
                                                     <td> {{ $row->name }} </td>
                                                     <td>
-                                                        <a class="btn btn-round btn-danger" href="{{route('admin_user_role_delete',['user_id'=> $data->id,'roleid'=>$row->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a>
+                                                        <a class="btn btn-round btn-danger" href="{{route('admin_user_role_delete',['userid'=> $data->id,'roleid'=>$row->id])}}" onclick="return confirm('Silmek İsteğinizden eminmisiniz!!')">Delete</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -49,6 +49,7 @@
                                                     <option value="{{ $rs->id }}">{{ $rs->name }}</option>
                                                 @endforeach
                                             </select>
+                                            <button type="submit" class="btn-success">Add Role</button>
                                         </form>
                                     </td>
                                 </tr>

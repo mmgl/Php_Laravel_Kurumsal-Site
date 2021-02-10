@@ -4,7 +4,11 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
             <div class="info">
-            <p class="centered"><a href="profile.html"><img src="{{asset('assets')}}/admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                <p class="centered">
+                @if (Auth::user()->profile_photo_path)
+                    <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" cclass="img-circle" width="60" >
+                @endif
+                </p>
                 @auth
                     <a href="#" class="d-block"><h5 class="centered">{{\Illuminate\Support\Facades\Auth::user()->name}}</h5></a>
                 @endauth
@@ -32,7 +36,7 @@
             <li class="sub-menu">
                 <a href="{{route('admin_products')}}" >
                     <i class="fa fa-tasks"></i>
-                    <span >Çözümler</span>
+                    <span >Menu</span>
                 </a>
                 <!--
                 <ul class="sub">
@@ -65,6 +69,12 @@
                 <a href="{{route('admin_setting')}}" >
                     <i class="fa fa-cogs"></i>
                     <span >Ayarlar</span>
+                </a>
+            </li>
+            <li class="sub-menu">
+                <a href="{{route('admin_user')}}" >
+                    <i class="fa fa-cogs"></i>
+                    <span >Users</span>
                 </a>
             </li>
         </ul>

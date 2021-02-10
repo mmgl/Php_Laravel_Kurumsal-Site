@@ -105,9 +105,9 @@ class UserController extends Controller
 
     public function user_roles(User $user, $id)
     {
-        $user = User::find($id);
+        $data = User::find($id);
         $datalist = Role::all()->sortBy('name');
-        return view('admin.user_roles', ['user' => $user,'datalist'=>$datalist]);
+        return view('admin.user_roles', ['data' => $data,'datalist'=>$datalist]);
     }
 
     public function user_role_store(Request $request,User $user, $id)
@@ -120,7 +120,7 @@ class UserController extends Controller
     public function user_role_delete(Request $request,User $user,$userid,$roleid)
     {
         $user = User::find($userid);
-        $user->roles()->attach($roleid);
+        $user->roles()->detach($roleid);
         return redirect()->back()->with('success','Role deleted from User!');
     }
 }

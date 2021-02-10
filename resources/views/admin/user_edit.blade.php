@@ -39,8 +39,8 @@
                                     <label class="col-sm-2 col-sm-2 control-label">Image</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="image" class="form-control">
-                                        @if ($user->profile_photo_path)
-                                            <img src="{{ Storage::url($user->profile_photo_path) }}" height="200" style="border-radius: 10px" alt="">
+                                        @if ($data->profile_photo_path)
+                                            <img src="{{ Storage::url($data->profile_photo_path) }}" height="200" style="border-radius: 10px" alt="">
                                         @endif
                                     </div>
                                 </div>
