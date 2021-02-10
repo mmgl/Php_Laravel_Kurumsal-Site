@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->integer('product_id')->default(1);
             $table->integer('user_id')->default(1);
             $table->string('IP',20)->nullable();
-            $table->string('subject')->nullable();
+            $table->string('subject',100)->nullable();
             $table->string('comment')->nullable();
             $table->string('status',5)->nullable()->default('New');
             $table->timestamps();

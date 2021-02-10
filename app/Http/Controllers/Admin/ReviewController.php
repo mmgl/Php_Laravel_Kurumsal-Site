@@ -39,19 +39,7 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $data = Review::find($id);
-        return view('admin.review_edit',['data'=>$data]);
+        //
     }
 
     /**
@@ -66,18 +54,30 @@ class ReviewController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Review  $review
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Review $review,$id)
+    {
+        $data = Review::find($id);
+        return view('admin.review_edit',['data'=>$data]);
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,$id)
+    public function update(Request $request,Review $review,$id)
     {
         $data = Review::find($id);
         $data->status = $request->input('status');
         $data->save();
-        return back()->with('success','Yarum basarılı');
+        return back()->with('success','Yorum basarılı');
     }
 
     /**
@@ -86,12 +86,11 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Review $review,$id)
     {
         $data = Review::find($id);
         $data->delete();
-        $max = DB::table('reviews')->max('id') + 1;
-        DB::statement("ALTER TABLE reviews AUTO_INCREMENT =  $max");
+
         return redirect()->back()->with('success','Yarum Silindi');
     }
 }

@@ -12,45 +12,51 @@
                             <form action="{{ route('admin_review_update', ['id' => $data->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group" >
+                                    <label class="col-sm-2 col-sm-2 control-label">Id</label>
+                                    <div class="col-sm-10">
+                                        {{$data->id}}
+                                    </div>
+                                </div>
+                                <div class="form-group" >
                                     <label class="col-sm-2 col-sm-2 control-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" id="title" name="title" class="form-control" value="{{$data->user->name}}">
+                                        {{$data->user->name}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Çözüm</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="keywords" value="{{$data->product->title}}" class="form-control">
+                                       {{$data->product->title}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Yorum</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="keywords" value="{{$data->comment}}" class="form-control">
+                                        {{$data->comment}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Subject</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="description" value="{{$data->subject}}" class="form-control">
+                                        {{$data->subject}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">IP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="description" value="{{$data->IP}}" class="form-control">
+                                        {{$data->IP}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Created Date</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="description" value="{{$data->created_at}}" class="form-control">
+                                        {{$data->created_at}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Updated Date</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="description" value="{{$data->updated_at}}" class="form-control">
+                                        {{$data->updated_at}}
                                     </div>
                                 </div>
                                 <div class="form-group">

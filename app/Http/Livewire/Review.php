@@ -10,7 +10,8 @@ class Review extends Component
 {
     public $record, $subject, $comment, $product_id;
 
-    public function mount($id){
+    public function mount($id)
+    {
         $this->record = Product::findOrFail($id);
         $this->product_id = $this->record->id;
     }
@@ -19,6 +20,7 @@ class Review extends Component
     {
         return view('livewire.review');
     }
+
     private function resetInput(){
         $this->subject = null;
         $this->comment = null;
@@ -41,7 +43,7 @@ class Review extends Component
             'comment'=>$this->comment,
 
         ]);
-        session()->flash('message','Gönderim başarılı');
+
         $this->resetInput();
     }
 }

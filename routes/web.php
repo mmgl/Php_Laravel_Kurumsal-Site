@@ -30,10 +30,8 @@ Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'aboutus'])-
 Route::get('/references', [App\Http\Controllers\HomeController::class, 'references'])->name('references');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
-
 Route::get('/product/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 Route::get('/menu/{id}/{slug}', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
-
 Route::post('/getproduct', [App\Http\Controllers\HomeController::class, 'getproduct'])->name('getproduct');
 
 Route::post('/sendmessage', [App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
@@ -109,7 +107,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
     Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
-    Route::get('/destroymyreviews/{id}', [UserController::class, 'destroymyreviews'])->name('admin_review_delete');
+    Route::get('/destroymyreviews/{id}', [UserController::class, 'destroymyreviews'])->name('user_review_delete');
 
 });
 

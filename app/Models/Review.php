@@ -18,7 +18,6 @@ class Review extends Model
         'product_id',
         'user_id',
         'IP',
-        'subject',
         'comment',
     ];
 

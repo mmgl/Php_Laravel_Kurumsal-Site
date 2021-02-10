@@ -19,7 +19,7 @@ class Product extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function reivew()
+    public function reivews()
     {
         return $this->hasMany(Review::class);
     }
