@@ -51,6 +51,7 @@
         <div class="row">
             <div class="span8">
                 @livewire('review', ['id' => $data->id])
+                @livewireScripts
             </div>
         </div>
     </div>

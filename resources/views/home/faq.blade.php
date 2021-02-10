@@ -24,7 +24,7 @@
                             <div class="row">
 
                                 <div class="span12">
-                                    <h4 class="title"><strong>General</strong> questions</h4>
+                                    <h4 class="title"><strong>Genel</strong> Sorular</h4>
                                     <!-- start: Accordion -->
                                     <div class="accordion" id="accordion2">
                                         <div class="accordion-group">
@@ -73,7 +73,7 @@
                                     <div class="solidline"></div>
                                     <div class="blankline20"></div>
 
-                                    <h4 class="title"><strong>Billing</strong> questions</h4>
+                                    <h4 class="title"><strong>Tartışmalı</strong> sorular</h4>
                                     <!-- start: Accordion -->
                                     <div class="accordion" id="accordion3">
                                         <div class="accordion-group">

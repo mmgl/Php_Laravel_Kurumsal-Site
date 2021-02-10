@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Review extends Component
 {
-    public $record, $subject, $comment, $product_id;
+    public $record, $comment, $product_id;
 
     public function mount($id)
     {
@@ -22,7 +22,6 @@ class Review extends Component
     }
 
     private function resetInput(){
-        $this->subject = null;
         $this->comment = null;
         $this->product_id = null;
         $this->IP = null;
@@ -31,7 +30,6 @@ class Review extends Component
     public function store()
     {
         $this->validate([
-            'subject'=> 'required|min:5',
             'comment' => 'required|min:10'
         ]);
 
@@ -39,7 +37,6 @@ class Review extends Component
             'product_id'=>$this->product_id,
             'user_id'=>Auth::id(),
             'IP'=>$_SERVER['REMOTE_ADDR'],
-            'subject'=>$this->subject,
             'comment'=>$this->comment,
 
         ]);

@@ -19,7 +19,6 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Product</th>
-                                <th>Subject</th>
                                 <th>Review</th>
                                 <th>Status</th>
                                 <th>Date</th>
@@ -32,7 +31,6 @@
                             <tr>
                                 <td>{{$rs->id}}</td>
                                 <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}" target="_blank">{{$rs->product->title}}</a> </td>
-                                <td>{{$rs->subject}}</td>
                                 <td>{{$rs->comment}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td>{{$rs->created_at}}</td>
@@ -42,8 +40,9 @@
                                 </td>
                             </tr>
                             </tbody>
+                            @endforeach
                         </table>
-                        @endforeach
+
                 </div>
             </div>
         </div>

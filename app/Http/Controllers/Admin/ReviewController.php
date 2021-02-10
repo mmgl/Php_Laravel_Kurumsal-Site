@@ -59,7 +59,7 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review,$id)
+    public function show($id)
     {
         $data = Review::find($id);
         return view('admin.review_edit',['data'=>$data]);
@@ -75,6 +75,7 @@ class ReviewController extends Controller
     public function update(Request $request,Review $review,$id)
     {
         $data = Review::find($id);
+
         $data->status = $request->input('status');
         $data->save();
         return back()->with('success','Yorum basarılı');

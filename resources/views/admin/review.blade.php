@@ -20,7 +20,6 @@
                                 <th>Id</th>
                                 <th>Product</th>
                                 <th>User</th>
-                                <th>Subject</th>
                                 <th>Review</th>
                                 <th>Status</th>
                                 <th>Date</th>
@@ -38,7 +37,6 @@
                                             {{ $rs->user->name }}
                                         </a>
                                     </td>
-                                    <td>{{$rs->subject}}</td>
                                     <td>{{$rs->comment}}</td>
                                     <td>{{ $rs->status }}</td>
                                     <td>{{$rs->created_at}}</td>
