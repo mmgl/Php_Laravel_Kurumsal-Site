@@ -100,7 +100,6 @@ class ProductController extends Controller
         $data->description = $request->input('description');
         $data->slug = $request->input('slug');
         $data->status = $request->input('status');
-        $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
         if($request->file('image')!=null)
         {

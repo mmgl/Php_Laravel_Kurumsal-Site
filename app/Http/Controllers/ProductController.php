@@ -55,6 +55,12 @@ class ProductController extends Controller
         $data->detail= $request->input('detail');
         $data->image = Storage::putFile('images',$request->file('image'));
 
+        $userRoles = Auth::user()->roles->pluck('name');
+        if($userRoles->contains('admin')) {
+            $data->status = 'True';
+        }else{
+            $data->status = 'False';
+        }
         $data->save();
         return redirect()->route('user_products');
 

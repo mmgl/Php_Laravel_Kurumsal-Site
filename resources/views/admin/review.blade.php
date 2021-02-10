@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="content-panel">
                     <section id="unseen">
-                        <h4 class="title"><strong>Ürünler</strong> - hakkında yorumlarınız<span></span></h4>
+                        <h4 class="title"><strong>Etkinlik</strong> - hakkında yorumlarınız<span></span></h4>
 
                         <table class="table table-striped">
                             <thead>
@@ -33,7 +33,11 @@
                                 <tr>
                                     <td>{{$rs->id}}</td>
                                     <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug])}}" target="_blank">{{$rs->product->title}}</a> </td>
-                                    <td>{{$rs->user->name}}</td>
+                                    <td>
+                                        <a href="{{ route('admin_user_show', ['id' => $rs->user->id]) }}" onclick="return !window.open(this.href, '', 'top=120 left=120 width=640 height=720')">
+                                            {{ $rs->user->name }}
+                                        </a>
+                                    </td>
                                     <td>{{$rs->subject}}</td>
                                     <td>{{$rs->comment}}</td>
                                     <td>{{ $rs->status }}</td>

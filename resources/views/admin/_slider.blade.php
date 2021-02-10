@@ -14,6 +14,12 @@
                 @endauth
             </div>
             <li class="mt">
+                <a class="" href="{{route('home')}}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Site Önizleme</span>
+                </a>
+            </li>
+            <li class="sub-menu">
                 <a class="" href="{{route('admin_home')}}">
                     <i class="fa fa-dashboard"></i>
                     <span>AnaSayfa</span>
@@ -23,7 +29,7 @@
             <li class="sub-menu">
                 <a href="{{route('admin_category')}}" >
                     <i class="fa fa-desktop"></i>
-                    <span>Hizmetlerimiz</span>  <!-- Kategori gibi uyarlayacağız -->
+                    <span>Menü</span>  <!-- Kategori gibi uyarlayacağız -->
                 </a><!--
                 <ul class="sub">
                     <li><a  href="general.html">E-Ticaret</a></li>
@@ -36,7 +42,7 @@
             <li class="sub-menu">
                 <a href="{{route('admin_products')}}" >
                     <i class="fa fa-tasks"></i>
-                    <span >Menu</span>
+                    <span >Tüm Haberler</span>
                 </a>
                 <!--
                 <ul class="sub">

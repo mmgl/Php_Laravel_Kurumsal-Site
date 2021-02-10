@@ -3,7 +3,7 @@
 @endphp
 
 <li class="dropdown">
-    <a href="#">Çözümler <i class="icon-angle-down"></i></a>
+    <a href="#">Haberler <i class="icon-angle-down"></i></a>
     <ul class="dropdown-menu">
         @foreach($parentCategories->sortBy('id') as $rs)
             @if(count($rs->children->where('status','=','True'))==0)

@@ -48,7 +48,11 @@
             </div>
             @endforeach
         </div>
-        @livewire('review', ['id' => $data->id])
+        <div class="row">
+            <div class="span8">
+                @livewire('review', ['id' => $data->id])
+            </div>
+        </div>
     </div>
     </div>
         </div>

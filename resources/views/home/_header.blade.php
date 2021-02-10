@@ -60,7 +60,7 @@
                                     <li class="dropdown active">
                                         <a href="">Login / Join<i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('login') }}">Login</a></li>
+                                            <li><a href="{{ route('admin_login') }}">Login</a></li>
                                             <li><a href="{{ route('register') }}">Register</a></li>
                                         </ul>
                                     </li>
